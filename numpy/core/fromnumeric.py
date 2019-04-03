@@ -1945,12 +1945,12 @@ def compress(condition, a, axis=None, out=None):
     return _wrapfunc(a, 'compress', condition, axis=axis, out=out)
 
 
-def _clip_dispatcher(a, a_min, a_max, out=None):
+def _clip_dispatcher(a, a_min=None, a_max=None, out=None):
     return (a, a_min, a_max)
 
 
 @array_function_dispatch(_clip_dispatcher)
-def clip(a, a_min, a_max, out=None):
+def clip(a, a_min=None, a_max=None, out=None):
     """
     Clip (limit) the values in an array.
 
